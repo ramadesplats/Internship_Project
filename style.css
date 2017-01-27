@@ -1,0 +1,116 @@
+/*****************/
+/* Le tableau */
+/*****************/
+
+table
+{
+    border-collapse: collapse;
+    text-align:center;
+    margin: auto;
+}
+ul{
+    text-align:center;
+    font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+th
+{
+    background-color: #4CAF50;
+    font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border: 1px solid black;
+    padding:10px;
+
+}
+
+td{
+    font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border: 1px solid black;
+    padding:10px;
+}
+
+h1,h2,p
+{
+    font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align:center;
+}
+a
+{
+    text-decoration: none;
+    color:black;
+    margin:15px;
+}
+a:hover
+{
+    text-decoration: none;
+    color:black;
+    cursor:default;
+    font-size: 115%;
+    font-weight: bold;
+}
+
+/*****************/
+/* Le formulaire */
+/*****************/
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, font, center, li, form, label, {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+body {
+    line-height: 1;
+}
+
+form {
+    width:560px;
+    margin:0px auto;
+    text-align:left;
+}
+
+label {
+    font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	float:left;
+	width:180px;
+    margin-top: 25px;
+}
+
+input, 
+select, 
+textarea{
+	background:#fff;
+	font-size:1em;
+	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:300;
+	color:#8c8a8b;
+    margin-top: 25px;
+}
+
+input[type=text], 
+input[type=password], 
+input[type=email], 
+textarea {
+	border:1px solid #c7c7c7;
+	outline:5px solid rgba(0, 0, 0, 0.1);
+	padding:3px 5px;
+    margin-top: 25px;
+}
+
+input[type=text]:focus, 
+input[type=text]:active, 
+input[type=password]:active, 
+input[type=password]:focus, 
+input[type=email]:active, 
+input[type=email]:focus, 
+textarea:active, 
+textarea:focus {
+	outline:5px solid rgba(0, 0, 0, 0.2);
+}
+
+textarea {
+	height:174px;
+}
+

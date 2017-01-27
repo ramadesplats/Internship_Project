@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xslt" href="GlobalXSLT.xslt"?>
+<RefGlobale xsi:noNamespaceSchemaLocation="/Users/Guillaume/Desktop/GlobalSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<etudiants>
+		<etudiant idPersonne="idPersonne-1">
+			<nom>DE BRITO</nom>
+			<prenom>Guilaume</prenom>
+			<date_naissance>1995-05-02</date_naissance>
+		</etudiant>
+		<etudiant idPersonne="idPersonne-2">
+			<nom>CHABERT</nom>
+			<prenom>Paul</prenom>
+			<date_naissance>1995-12-02</date_naissance>
+		</etudiant>
+		<etudiant idPersonne="idPersonne-3">
+			<nom>DESPLATS</nom>
+			<prenom>Rama</prenom>
+			<date_naissance>1995-01-01</date_naissance>
+		</etudiant>
+	</etudiants>
+	<responsables>
+		<responsable idPersonne="idPersonne-4">
+			<nom>DUMEDON</nom>
+			<prenom>Fabrice</prenom>
+			<date_naissance>1985-02-03</date_naissance>
+			<fonction>Directeur de la recherche chez Pierre Fabre</fonction>
+			<telephone>0673935746</telephone>
+			<email>dumedon@pierrefabre.com</email>
+		</responsable>
+		<responsable idPersonne="idPersonne-5">
+			<nom>PONCETTE</nom>
+			<prenom>Mathilde</prenom>
+			<date_naissance>1970-02-12</date_naissance>
+			<fonction>Chef de projet chez AppDev</fonction>
+			<telephone>0649284028</telephone>
+			<email>m.poncette@appdev.fr</email>
+		</responsable>
+		<responsable idPersonne="idPersonne-6">
+			<nom>MACHIT</nom>
+			<prenom>Julien</prenom>
+			<date_naissance>1975-12-02</date_naissance>
+			<fonction>Ingénieur chez Pub4life</fonction>
+			<telephone>0789482743</telephone>
+			<email>machit.julien@pubforlife.com</email>
+		</responsable>
+		<responsable idPersonne="idPersonne-7">
+			<nom>HIBRA</nom>
+			<prenom>Enzo</prenom>
+			<date_naissance>1985-02-01</date_naissance>
+			<fonction>Professeur à l'INSA Toulouse - GB</fonction>
+			<telephone>0763543939</telephone>
+			<email>hibra@insa-toulouse.fr</email>
+		</responsable>
+		<responsable idPersonne="idPersonne-8">
+			<nom>THAUVE</nom>
+			<prenom>Gerard</prenom>
+			<date_naissance>1965-10-02</date_naissance>
+			<fonction>Professeur à l'INSA Toulouse - GEI</fonction>
+			<telephone>0768899008</telephone>
+			<email>thauve@insa-toulouse.fr</email>
+		</responsable>
+		<responsable idPersonne="idPersonne-9">
+			<nom>ALEXANDRE</nom>
+			<prenom>Romain</prenom>
+			<date_naissance>1990-07-08</date_naissance>
+			<fonction>Professeur à l'INSA Toulouse - GEI</fonction>
+			<telephone>0973829273</telephone>
+			<email>alexandre@insa-toulouse.fr</email>
+		</responsable>
+		<responsable idPersonne="idPersonne-10">
+			<nom>PUJOL</nom>
+			<prenom>Anais</prenom>
+			<date_naissance>1980-11-11</date_naissance>
+			<fonction>Professeur à l'INSA Toulouse - GB</fonction>
+			<telephone>0763638392</telephone>
+			<email>pujol@insa-toulouse.fr</email>
+		</responsable>
+		<responsable idPersonne="idPersonne-11">
+			<nom>TRULE</nom>
+			<prenom>Jean</prenom>
+			<date_naissance>1975-01-10</date_naissance>
+			<fonction>Sous chef de projet chez AppDev</fonction>
+			<telephone>0649724027</telephone>
+			<email>j.trule@appdev.fr</email>
+		</responsable>
+	</responsables>
+	<stages>
+        <stage idStage="ID-1">
+            <intitule>Developpement d'une molécule</intitule>
+            <motClef>Création d'une molécule qui guérit la grippe</motClef>
+            <duree>6</duree>
+            <annee>2014</annee>
+            <po idpo="idPo-1"/>
+            <evaltechnique idevaltech="Id_Eval_1"/>
+            <stagiaire idetudiant="idPersonne-1"/>
+            <tuteur idtuteur="Id_Tut_1"/>
+            <maitredestage idmaitredestage="idMaitre-1"/>
+            <rapport idrapport="Id_Rap_1"/>
+        </stage>
+		<stage idStage="ID-2">
+			<intitule>Application android </intitule>
+			<motClef>Création d'un sudoku sur android</motClef>
+			<duree>3</duree>
+			<annee>2015</annee>
+			<po idpo="idPo-2"/>
+			<evaltechnique idevaltech="Id_Eval_2"/>
+			<stagiaire idetudiant="idPersonne-2"/>
+			<tuteur idtuteur="Id_Tut_2"/>
+			<maitredestage idmaitredestage="idMaitre-2"/>
+			<maitredestage idmaitredestage="idMaitre-4"/>
+			<rapport idrapport="Id_Rap_2"/>
+		</stage>
+		<stage idStage="ID-3">
+			<intitule>Code Ocaml pour publicité</intitule>
+			<motClef>Création de bandeaux publicitaire pour site internet</motClef>
+			<duree>3</duree>
+			<annee>2016</annee>
+			<po idpo="idPo-2"/>
+			<evaltechnique idevaltech="Id_Eval_3"/>
+			<stagiaire idetudiant="idPersonne-3"/>
+			<tuteur idtuteur="Id_Tut_3"/>
+			<maitredestage idmaitredestage="idMaitre-3"/>
+			<rapport idrapport="Id_Rap_3"/>
+		</stage>
+	</stages>
+	<entreprises>
+		<entreprise idEtablissement="idEntre-3">
+			<nom>Pub4life</nom>
+			<adresse>10 rue du petit pommier 22400 Dumois</adresse>
+			<siret>16516</siret>
+		</entreprise>
+		<entreprise idEtablissement="idEntre-4">
+			<nom>AppDev</nom>
+			<adresse>30 avenue de la Marnet</adresse>
+			<siret>58454</siret>
+		</entreprise>
+	</entreprises>
+	<laboratoires>
+		<laboratoire idEtablissement="idEntre-1">
+			<nom>Pierre fabre</nom>
+			<adresse>15 avenue du pin penché 31100 Toulouse</adresse>
+			<unite>Medicament</unite>
+		</laboratoire>
+		<laboratoire idEtablissement="idEntre-2">
+			<nom>Bayer</nom>
+			<adresse>5 rue du colonnel Vigilant 83100 Toulon</adresse>
+			<unite>Vaccin</unite>
+		</laboratoire>
+	</laboratoires>
+	<maitredestages>
+		<maitredestage idMaitredestage="idMaitre-1" idresponsable="idPersonne-4">
+			<chercheur idLaboratoire="idEntre-1"/>
+		</maitredestage>
+		<maitredestage idMaitredestage="idMaitre-2" idresponsable="idPersonne-5">
+			<industriel idEntrepr="idEntre-4"/>
+		</maitredestage>
+		<maitredestage idMaitredestage="idMaitre-3" idresponsable="idPersonne-6">
+			<industriel idEntrepr="idEntre-3"/>
+		</maitredestage>
+		<maitredestage idMaitredestage="idMaitre-4" idresponsable="idPersonne-11">
+			<industriel idEntrepr="idEntre-4"/>
+		</maitredestage>
+	</maitredestages>
+	<evalsTechnique>
+		<evaluation idEvalTechnique="Id_Eval_1">
+			<commIntegration>S'est bien intégré</commIntegration>
+			<commTechnique>Bon bagage technique</commTechnique>
+			<commCommunication>S'est vite adapté à l'équipe</commCommunication>
+			<note>1</note>
+			<maitredestage idmaitredestage="idMaitre-1"/>
+		</evaluation>
+		<evaluation idEvalTechnique="Id_Eval_2">
+			<commIntegration>Des débuts difficiles</commIntegration>
+			<commTechnique>Fort en programmation</commTechnique>
+			<commCommunication>Parle peu</commCommunication>
+			<note>12</note>
+			<maitredestage idmaitredestage="idMaitre-2"/>
+			<maitredestage idmaitredestage="idMaitre-4"/>
+		</evaluation>
+		<evaluation idEvalTechnique="Id_Eval_3">
+			<commIntegration>Rien à dire</commIntegration>
+			<commTechnique>Des progrès à faire en XML</commTechnique>
+			<commCommunication>Communication excellente</commCommunication>
+			<note>16</note>
+			<maitredestage idmaitredestage="idMaitre-3"/>
+		</evaluation>
+	</evalsTechnique>
+	<enseignants>
+		<enseignant idEnseignant="Id_Ens_1">
+			<responsable_enseignant idresponsable="idPersonne-7"/>
+		</enseignant>
+		<enseignant idEnseignant="Id_Ens_2">
+			<responsable_enseignant idresponsable="idPersonne-8"/>
+		</enseignant>
+		<enseignant idEnseignant="Id_Ens_3">
+			<responsable_enseignant idresponsable="idPersonne-9"/>
+		</enseignant>
+		<enseignant idEnseignant="Id_Ens_4">
+			<responsable_enseignant idresponsable="idPersonne-10"/>
+		</enseignant>
+	</enseignants>
+	<jurys>
+		<jury idJury="Id_Jur_1">
+			<jury_enseignant idenseignant="Id_Ens_1"/>
+			<jury_enseignant idenseignant="Id_Ens_4"/>
+			<jury_maitre_de_stage idmaitre_de_stage="idMaitre-1"/>
+			<jury_tuteur idtuteur="Id_Tut_1"/>
+		</jury>
+		<jury idJury="Id_Jur_2">
+			<jury_enseignant idenseignant="Id_Ens_2"/>
+			<jury_enseignant idenseignant="Id_Ens_3"/>
+			<jury_maitre_de_stage idmaitre_de_stage="idMaitre-2"/>
+			<jury_maitre_de_stage idmaitre_de_stage="idMaitre-4"/>
+			<jury_tuteur idtuteur="Id_Tut_2"/>
+		</jury>
+		<jury idJury="Id_Jur_3">
+			<jury_enseignant idenseignant="Id_Ens_2"/>
+			<jury_enseignant idenseignant="Id_Ens_3"/>
+			<jury_maitre_de_stage idmaitre_de_stage="idMaitre-3"/>
+			<jury_tuteur idtuteur="Id_Tut_3"/>
+		</jury>
+	</jurys>
+	<rapports>
+		<rapport idRapport="Id_Rap_1">
+			<intitule>Rapport de GUILLAUME DE BRITO</intitule>
+			<note_rapporteur>2</note_rapporteur>
+			<note_jury>13</note_jury>
+			<enseignant_rapporteur idenseignant="Id_Ens_1"/>
+			<enseignants>
+				<enseignant idenseignant="Id_Ens_1"/>
+				<enseignant idenseignant="Id_Ens_4"/>
+			</enseignants>
+			<soutenance idSoutenance="Id_Sou_1"/>
+		</rapport>
+		<rapport idRapport="Id_Rap_2">
+			<intitule>Rapport de PAUL CHABERT</intitule>
+			<note_rapporteur>20</note_rapporteur>
+			<note_jury>19</note_jury>
+			<enseignant_rapporteur idenseignant="Id_Ens_2"/>
+			<enseignants>
+				<enseignant idenseignant="Id_Ens_2"/>
+			</enseignants>
+			<soutenance idSoutenance="Id_Sou_2"/>
+		</rapport>
+		<rapport idRapport="Id_Rap_3">
+			<intitule>Rapport de RAMA DESPLATS</intitule>
+			<note_rapporteur>18</note_rapporteur>
+			<note_jury>20</note_jury>
+			<enseignant_rapporteur idenseignant="Id_Ens_3"/>
+			<enseignants>
+				<enseignant idenseignant="Id_Ens_2"/>
+				<enseignant idenseignant="Id_Ens_3"/>
+			</enseignants><!--Pour Xquery
+			<soutenance idSoutenance="Id_Sou_3"/-->
+		</rapport>
+	</rapports>
+	<tuteurs>
+		<tuteur idTuteur="Id_Tut_1">
+			<enseignant_tuteur idenseignant="Id_Ens_1"/>
+		</tuteur>
+		<tuteur idTuteur="Id_Tut_2">
+			<enseignant_tuteur idenseignant="Id_Ens_2"/>
+		</tuteur>
+		<tuteur idTuteur="Id_Tut_3">
+			<enseignant_tuteur idenseignant="Id_Ens_3"/>
+		</tuteur>
+	</tuteurs>
+	<pos>
+		<po idPo="idPo-1">
+			<intitule>ICBE</intitule>
+			<departement>GB</departement>
+		</po>
+		<po idPo="idPo-2">
+			<intitule>MIC</intitule>
+			<departement>GEI</departement>
+		</po>
+	</pos>
+	<soutenances>
+		<soutenance idSoutenance="Id_Sou_1">
+			<date>2014-02-02</date>
+			<lieu>Toulouse</lieu>
+			<note_soutenance>18</note_soutenance>
+			<jury idjury="Id_Jur_1"/>
+		</soutenance>
+		<soutenance idSoutenance="Id_Sou_2">
+			<date>2015-12-12</date>
+			<lieu>Toulouse</lieu>
+			<note_soutenance>1</note_soutenance>
+			<jury idjury="Id_Jur_2"/>
+		</soutenance><!--pour Xquery
+		<soutenance idSoutenance="Id_Sou_3">
+			<date>2015-12-12</date>
+			<lieu>Toulouse</lieu>
+			<note_soutenance>16</note_soutenance>
+			<jury idjury="Id_Jur_2"/>
+		</soutenance-->
+	</soutenances>
+</RefGlobale>

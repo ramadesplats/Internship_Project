@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="RefGlobale">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="etudiants"/>
+				<xs:element ref="responsables"/>
+				<xs:element ref="stages"/>
+				<xs:element ref="entreprises"/>
+				<xs:element ref="laboratoires"/>
+				<xs:element ref="maitredestages"/>
+				<xs:element ref="evalsTechnique"/>
+				<xs:element ref="enseignants"/>
+				<xs:element ref="jurys"/>
+				<xs:element ref="rapports"/>
+				<xs:element ref="tuteurs"/>
+				<xs:element ref="pos"/>
+				<xs:element ref="soutenances"/>
+			</xs:sequence>
+		</xs:complexType><!-- ###################### KEY ####################### -->
+		<xs:key name="keyEtudiant">
+			<xs:selector xpath="./etudiants/etudiant"/>
+			<xs:field xpath="@idPersonne"/>
+		</xs:key>
+		<xs:key name="keyResponsable">
+			<xs:selector xpath="./responsables/responsable"/>
+			<xs:field xpath="@idPersonne"/>
+		</xs:key>
+		<xs:key name="keyLabo">
+			<xs:selector xpath="./laboratoires/laboratoire"/>
+			<xs:field xpath="@idEtablissement"/>
+		</xs:key>
+		<xs:key name="keyEntre">
+			<xs:selector xpath="./entreprises/entreprise"/>
+			<xs:field xpath="@idEtablissement"/>
+		</xs:key>
+		<xs:key name="keyEvalTechnique">
+			<xs:selector xpath="./evalsTechnique/evaluation"/>
+			<xs:field xpath="@idEvalTechnique"/>
+		</xs:key>
+		<xs:key name="keyMaitredeStage">
+			<xs:selector xpath="./maitredestages/maitredestage"/>
+			<xs:field xpath="@idMaitredestage"/>
+		</xs:key>
+		<xs:key name="keyStage">
+			<xs:selector xpath="./stages/stage"/>
+			<xs:field xpath="@idStage"/>
+		</xs:key>
+		<xs:key name="keyEnseignant">
+			<xs:selector xpath="./enseignants/enseignant"/>
+			<xs:field xpath="@idEnseignant"/>
+		</xs:key>
+		<xs:key name="keyTuteur">
+			<xs:selector xpath="./tuteurs/tuteur"/>
+			<xs:field xpath="@idTuteur"/>
+		</xs:key>
+		<xs:key name="keyRapport">
+			<xs:selector xpath="./rapports/rapport"/>
+			<xs:field xpath="@idRapport"/>
+		</xs:key>
+		<xs:key name="keyJury">
+			<xs:selector xpath="./jurys/jury"/>
+			<xs:field xpath="@idJury"/>
+		</xs:key>
+		<xs:key name="keypo">
+			<xs:selector xpath="./pos/po"/>
+			<xs:field xpath="@idPo"/>
+		</xs:key>
+		<xs:key name="keySoutenance">
+			<xs:selector xpath="./soutenances/soutenance"/>
+			<xs:field xpath="@idSoutenance"/>
+		</xs:key><!-- ###################### KEYREF ####################### --><!-- ###################### keyref Stage ####################### -->
+		<xs:keyref name="EtudiantdansStage" refer="keyEtudiant">
+			<xs:selector xpath="./stages/stage/stagiaire"/>
+			<xs:field xpath="@idetudiant"/>
+		</xs:keyref>
+		<xs:keyref name="refevaltechdestage" refer="keyEvalTechnique">
+			<xs:selector xpath="./stages/stage/evaltechnique"/>
+			<xs:field xpath="@idevaltech"/>
+		</xs:keyref>
+		<xs:keyref name="podestage" refer="keypo">
+			<xs:selector xpath="./stages/stage/po"/>
+			<xs:field xpath="@idpo"/>
+		</xs:keyref>
+		<xs:keyref name="MaitresdeStageDansStage" refer="keyMaitredeStage">
+			<xs:selector xpath="./stages/stage/maitredestage"/>
+			<xs:field xpath="@idmaitredestage"/>
+		</xs:keyref>
+		<xs:keyref name="TuteurdansStage" refer="keyTuteur">
+			<xs:selector xpath="./stages/stage/tuteur"/>
+			<xs:field xpath="@idtuteur"/>
+		</xs:keyref>
+		<xs:keyref name="RapportdansStage" refer="keyRapport">
+			<xs:selector xpath="./stages/stage/rapport"/>
+			<xs:field xpath="@idrapport"/>
+		</xs:keyref><!-- ###################### keyref Maitre de stage####################### -->
+		<xs:keyref name="ResponsableDansMaitredeStage" refer="keyResponsable">
+			<xs:selector xpath="./maitredestages/maitredestage"/>
+			<xs:field xpath="@idresponsable"/>
+		</xs:keyref><!-- ###################### keyref Evalulation technique####################### -->
+		<xs:keyref name="MaitreDansEvalTechnique" refer="keyMaitredeStage">
+			<xs:selector xpath="./evalsTechnique/evaluation/maitredestage"/>
+			<xs:field xpath="@idmaitredestage"/>
+		</xs:keyref><!-- ###################### keyref Enseignant####################### -->
+		<xs:keyref name="refEnseignantResp" refer="keyResponsable">
+			<xs:selector xpath="./enseignants/enseignant/responsable_enseignant"/>
+			<xs:field xpath="@idresponsable"/>
+		</xs:keyref><!-- ###################### keyref Jury####################### -->
+		<xs:keyref name="EnseignantsduJury" refer="keyEnseignant">
+			<xs:selector xpath="./jurys/jury/jury_enseignant"/>
+			<xs:field xpath="@idenseignant"/>
+		</xs:keyref>
+		<xs:keyref name="MaitresDeStageduJury" refer="keyMaitredeStage">
+			<xs:selector xpath="./jurys/jury/jury_maitre_de_stage"/>
+			<xs:field xpath="@idmaitre_de_stage"/>
+		</xs:keyref>
+		<xs:keyref name="TuteurduJury" refer="keyTuteur">
+			<xs:selector xpath="./jury/jury/jury-tuteur"/>
+			<xs:field xpath="@idtuteur"/>
+		</xs:keyref><!-- ###################### keyref Rapport####################### -->
+		<xs:keyref name="EnseignantRapporteurdansRapport" refer="keyEnseignant">
+			<xs:selector xpath="./rapports/rapport/enseignant_rapporteur"/>
+			<xs:field xpath="@idenseignant"/>
+		</xs:keyref>
+		<xs:keyref name="EnseignantsdansRapport" refer="keyEnseignant">
+			<xs:selector xpath="./rapports/rapport/enseignants/enseignant"/>
+			<xs:field xpath="@idenseignant"/>
+		</xs:keyref>
+		<xs:keyref name="SoutenanceDansRapport" refer="keySoutenance">
+			<xs:selector xpath="./rapports/rapport/soutenance"/>
+			<xs:field xpath="@idSoutenance"/>
+		</xs:keyref><!-- ###################### keyref Tuteur####################### -->
+		<xs:keyref name="EnseignantdansTuteur" refer="keyEnseignant">
+			<xs:selector xpath="tuteurs/tuteur/enseignant_tuteur"/>
+			<xs:field xpath="@idenseignant"/>
+		</xs:keyref><!-- ###################### keyref Soutenance####################### -->
+		<xs:keyref name="juryDansSoutenance" refer="keyJury">
+			<xs:selector xpath="./soutenances/soutenance/jury"/>
+			<xs:field xpath="@idjury"/>
+		</xs:keyref><!-- ###################### keyref labo####################### -->
+		<xs:keyref name="labodechercheur" refer="keyLabo">
+			<xs:selector xpath="./maitredestages/maitredestage/chercheur"/>
+			<xs:field xpath="@idLaboratoire"/>
+		</xs:keyref><!-- ###################### keyref entreprise####################### -->
+		<xs:keyref name="entreprisedeindus" refer="keyEntre">
+			<xs:selector xpath="./maitredestages/maitredestage/chercheur"/>
+			<xs:field xpath="@idEntrepr"/>
+		</xs:keyref>
+	</xs:element><!-- ###################### PERSONNE ####################### -->
+	<xs:complexType name="personneT">
+		<xs:sequence>
+			<xs:element name="nom" type="xs:string"/>
+			<xs:element name="prenom" type="xs:string"/>
+			<xs:element name="date_naissance">
+				<xs:simpleType>
+					<xs:restriction base="xs:date">
+						<xs:minInclusive value="1900-01-01"/>
+						<xs:maxInclusive value="2000-01-01"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="idPersonne" type="xs:ID" use="required"/>
+	</xs:complexType><!-- ###################### ETUDIANT ####################### -->
+	<xs:element name="etudiants">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="etudiant" maxOccurs="unbounded" minOccurs="0" type="personneT"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element><!-- ###################### RESPONSABLE ####################### -->
+	<xs:complexType name="responsableT">
+		<xs:complexContent>
+			<xs:extension base="personneT">
+				<xs:sequence>
+					<xs:element name="fonction" type="xs:string"/>
+					<xs:element name="telephone">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="0[1-8][0-9]{8}"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="email" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="responsables">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="responsable" type="responsableT"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element><!-- ###################### STAGE ####################### -->
+	<xs:complexType name="stageT">
+		<xs:sequence>
+			<xs:element name="intitule" type="xs:string"/>
+			<xs:element maxOccurs="unbounded" minOccurs="1" name="motClef" type="xs:string"/>
+			<xs:element name="duree" type="xs:integer"/><!-- Fixer une convention pour la durée (en mois, en jours, etc.) -->
+			<xs:element name="annee">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:minInclusive value="1850"/>
+						<xs:maxInclusive value="2016"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="po">
+				<xs:complexType>
+					<xs:attribute name="idpo" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="evaltechnique">
+				<xs:complexType>
+					<xs:attribute name="idevaltech" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="stagiaire">
+				<xs:complexType>
+					<xs:attribute name="idetudiant" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="tuteur">
+				<xs:complexType>
+					<xs:attribute name="idtuteur" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="maitredestage" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="idmaitredestage" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="rapport">
+				<xs:complexType>
+					<xs:attribute name="idrapport" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="idStage" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:element name="stages">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="stage" type="stageT"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element><!-- ###################### ETABLISSEMENT ####################### -->
+	<xs:complexType name="etalissementT">
+		<xs:sequence>
+			<xs:element name="nom" type="xs:string"/>
+			<xs:element name="adresse" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="idEtablissement" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="laboT">
+		<xs:complexContent>
+			<xs:extension base="etalissementT">
+				<xs:sequence>
+					<xs:element name="unite" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="entrepriseT">
+		<xs:complexContent>
+			<xs:extension base="etalissementT">
+				<xs:sequence>
+					<xs:element name="siret" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="entreprises">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="entreprise" type="entrepriseT"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="laboratoires">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="laboratoire" type="laboT"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element><!-- ###################### MAITRE DE STAGE ####################### -->
+	<xs:complexType name="maitredestageT">
+		<xs:choice>
+			<xs:element name="industriel" type="industrielT"/>
+			<xs:element name="chercheur" type="chercheurT"/>
+		</xs:choice>
+		<xs:attribute name="idMaitredestage" use="required" type="xs:ID"/>
+		<xs:attribute name="idresponsable" type="xs:token" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="chercheurT">
+		<xs:attribute name="idLaboratoire" type="xs:token"/>
+	</xs:complexType>
+	<xs:complexType name="industrielT">
+		<xs:attribute name="idEntrepr" type="xs:token"/>
+	</xs:complexType>
+	<xs:element name="maitredestages">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="maitredestage" type="maitredestageT" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element><!-- ###################### EVALUATION TECHNIQUE ####################### -->
+	<xs:complexType name="evalTechniqueT">
+		<xs:sequence>
+			<xs:element name="commIntegration" type="xs:string"/>
+			<xs:element name="commTechnique" type="xs:string"/>
+			<xs:element name="commCommunication" type="xs:string"/>
+			<xs:element name="note" type="xs:integer"/>
+			<xs:element name="maitredestage">
+				<xs:complexType>
+					<xs:attribute name="idmaitredestage" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="idEvalTechnique" use="required" type="xs:ID"/>
+	</xs:complexType>
+	<xs:element name="evalsTechnique">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="evaluation" type="evalTechniqueT" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element><!-- ###################### ENSEIGNANT ####################### -->
+	<xs:complexType name="enseignantT">
+		<xs:sequence>
+			<xs:element name="responsable_enseignant">
+				<xs:complexType>
+					<xs:attribute name="idresponsable" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="idEnseignant" use="required" type="xs:ID"/>
+	</xs:complexType>
+	<xs:element name="enseignants">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="enseignant" type="enseignantT" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element><!-- ###################### JURY ####################### -->
+	<xs:complexType name="juryT">
+		<xs:sequence>
+			<xs:element name="jury_enseignant" minOccurs="1" maxOccurs="5">
+				<xs:complexType>
+					<xs:attribute name="idenseignant" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="jury_maitre_de_stage" minOccurs="1" maxOccurs="5">
+				<xs:complexType>
+					<xs:attribute name="idmaitre_de_stage" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="jury_tuteur">
+				<xs:complexType>
+					<xs:attribute name="idtuteur" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="idJury" use="required" type="xs:ID"/>
+	</xs:complexType>
+	<xs:element name="jurys">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="jury" type="juryT"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element><!-- ###################### RAPPORT ####################### -->
+	<xs:complexType name="enseignantsRapportT">
+		<xs:sequence>
+			<xs:element name="enseignant" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="idenseignant" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="rapportT">
+		<xs:sequence>
+			<xs:element name="intitule" type="xs:string"/>
+			<xs:element name="note_rapporteur" type="xs:string"/>
+			<xs:element name="note_jury" type="xs:string"/>
+			<xs:element name="enseignant_rapporteur">
+				<xs:complexType>
+					<xs:attribute name="idenseignant" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="enseignants" type="enseignantsRapportT" minOccurs="1" maxOccurs="5"/>
+			<xs:element name="soutenance" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="idSoutenance" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="idRapport" use="required" type="xs:ID"/>
+	</xs:complexType>
+	<xs:element name="rapports">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="rapport" type="rapportT" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element><!-- ###################### TUTEUR ####################### -->
+	<xs:complexType name="tuteurT">
+		<xs:sequence>
+			<xs:element name="enseignant_tuteur">
+				<xs:complexType>
+					<xs:attribute name="idenseignant" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="idTuteur" use="required" type="xs:ID"/>
+	</xs:complexType>
+	<xs:element name="tuteurs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="tuteur" type="tuteurT" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element><!-- ###################### PO ####################### -->
+	<xs:complexType name="poT">
+		<xs:sequence>
+			<xs:element name="intitule" type="xs:string"/>
+			<xs:element name="departement" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="idPo" use="required" type="xs:ID"/>
+	</xs:complexType>
+	<xs:element name="pos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="po" type="poT" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element><!-- ###################### SOUTENANCE ####################### -->
+	<xs:complexType name="soutenanceT">
+		<xs:sequence>
+			<xs:element name="date">
+				<xs:simpleType>
+					<xs:restriction base="xs:date">
+						<xs:minInclusive value="2000-01-01"/>
+						<xs:maxInclusive value="2025-01-01"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="lieu" type="xs:string"/>
+			<xs:element name="note_soutenance" type="xs:integer"/>
+			<xs:element name="jury">
+				<xs:complexType>
+					<xs:attribute name="idjury" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="idSoutenance" use="required" type="xs:ID"/>
+	</xs:complexType>
+	<xs:element name="soutenances">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="soutenance" type="soutenanceT" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

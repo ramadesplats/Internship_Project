@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ex>
+   <questune>2</questune>
+   <questdeux>1</questdeux>
+   <questtrois>3</questtrois>
+   <questquartre>
+      <po name="ICBE">
+         <moyenne/>
+         <pas_moyenne>
+            <etudiant name="DE BRITO">8.833333333333334</etudiant>
+         </pas_moyenne>
+      </po>
+      <po name="MIC">
+         <moyenne>
+            <etudiant name="CHABERT">10.833333333333334</etudiant>
+            <etudiant name="DESPLATS">17.5</etudiant>
+         </moyenne>
+         <pas_moyenne/>
+      </po>
+   </questquartre>
+   <questcinq>2</questcinq>
+   <questsix>1</questsix>
+   <questsept>
+      <po name="ICBE">1</po>
+      <po name="MIC">2</po>
+   </questsept>
+   <questhuit>
+      <po name="ICBE">1</po>
+      <po name="MIC">2</po>
+   </questhuit>
+   <questneuf>
+      <po name="ICBE">18</po>
+      <po name="MIC">1</po>
+   </questneuf>
+   <questdix>
+      <entreprise name="Pub4life">
+         <stageplus14>1</stageplus14>
+         <etudmoins11>0</etudmoins11>
+      </entreprise>
+      <entreprise name="AppDev">
+         <stageplus14>0</stageplus14>
+         <etudmoins11>1</etudmoins11>
+      </entreprise>
+   </questdix>
+</ex>
